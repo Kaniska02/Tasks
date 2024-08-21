@@ -9,6 +9,9 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; 
         }
         header {
             background: #333;
@@ -29,32 +32,40 @@
             text-decoration: none;
         }
         main {
+            flex: 1;
             padding: 20px;
         }
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 10px;
+            gap: 20px;
+        }
+        .gallery-item {
+            text-align: center;
         }
         .gallery img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             transition: transform 0.3s, box-shadow 0.3s, opacity 0.3s;
+            border-radius: 8px; 
         }
         .gallery img:hover {
             transform: scale(1.1);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             opacity: 0.9;
         }
+        .gallery-item p {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+            color: #f9f7f7; 
+            font-weight: bold;
+        }
         footer {
             background: #333;
             color: white;
             text-align: center;
             padding: 10px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
         }
     </style>
 </head>
@@ -73,12 +84,26 @@
     </header>
     <main>
         <div class="gallery">
-            <img src="https://2.bp.blogspot.com/-2uOFVwZrXOM/UUnzdtNl1OI/AAAAAAAABos/qeYbVFR2cqg/s1600/hawaii.jpg" alt="Beach">
-            <img src="https://th.bing.com/th/id/R.cefcc40a9d3af0f320511010bf0b6d00?rik=M%2fUpb0ZRN6V7gA&riu=http%3a%2f%2fwww.spews.org%2fwp-content%2fuploads%2f2018%2f04%2frsz_1kodaikanal_resort_cover_image_kb65928102736.jpg&ehk=speiwC47rhHJn1eTYL%2bbW713sP5Pl4Qizy2cZYqtSt0%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Kodaikanal">
-            <img src="https://www.hdwallpapers10.com/wp-content/uploads/2017/05/paris%20france%20eiffel%20tower%20beautiful%20amazing%20images%20full%20hd.jpg" alt="Paris"> 
-            <img src="https://th.bing.com/th/id/OIP.z8AkHE_Bns3B2dNmgHBWDwAAAA?rs=1&pid=ImgDetMain" alt="Northern Island">
-            <img src="https://static.trip101.com/main_pic/production/large/168181.jpg" alt="Delhi">
-        
+            <div class="gallery-item">
+                <img src="https://2.bp.blogspot.com/-2uOFVwZrXOM/UUnzdtNl1OI/AAAAAAAABos/qeYbVFR2cqg/s1600/hawaii.jpg" alt="Beach">
+                <p>Beautiful Beach</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/R.cefcc40a9d3af0f320511010bf0b6d00?rik=M%2fUpb0ZRN6V7gA&riu=http%3a%2f%2fwww.spews.org%2fwp-content%2fuploads%2f2018%2f04%2frsz_1kodaikanal_resort_cover_image_kb65928102736.jpg&ehk=speiwC47rhHJn1eTYL%2bbW713sP5Pl4Qizy2cZYqtSt0%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="Kodaikanal">
+                <p>Serene Kodaikanal</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://www.hdwallpapers10.com/wp-content/uploads/2017/05/paris%20france%20eiffel%20tower%20beautiful%20amazing%20images%20full%20hd.jpg" alt="Paris">
+                <p>Iconic Eiffel Tower, Paris</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://th.bing.com/th/id/OIP.z8AkHE_Bns3B2dNmgHBWDwAAAA?rs=1&pid=ImgDetMain" alt="Northern Island">
+                <p>Majestic Northern Island</p>
+            </div>
+            <div class="gallery-item">
+                <img src="https://static.trip101.com/main_pic/production/large/168181.jpg" alt="Delhi">
+                <p>Historic Delhi</p>
+            </div>
         </div>
     </main>
     <footer>
